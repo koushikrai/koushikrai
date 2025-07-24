@@ -5,7 +5,7 @@
 
 <p align="left"> <a href="https://twitter.com/koushik_rai21" target="blank"><img src="https://img.shields.io/twitter/follow/koushik_rai21?logo=twitter&style=for-the-badge" alt="koushik_rai21" /></a> </p>
 
-- 🔭 I’m currently working on a [Interview project](https://github.com/koushikrai/InterviewAce)
+- 🔭 I’m currently working on a [InterviewAce](https://github.com/koushikrai/InterviewAce)
 
 - 🌱 I’m currently learning **DSA and php**
 
