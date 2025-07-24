@@ -5,13 +5,13 @@
 
 <p align="left"> <a href="https://twitter.com/koushik_rai21" target="blank"><img src="https://img.shields.io/twitter/follow/koushik_rai21?logo=twitter&style=for-the-badge" alt="koushik_rai21" /></a> </p>
 
-- 🔭 I’m currently working on a [Portfolio](https://github.com/koushikrai/Portfolio_v1)
+- 🔭 I’m currently working on a [Interview project](https://github.com/koushikrai/InterviewAce)
 
-- 🌱 I’m currently learning **Gatsby and Django**
+- 🌱 I’m currently learning **DSA and php**
 
 - 👯 I’m looking to collaborate on [Medsynk](https://github.com/koushikrai/MedSynk)
 
-- 👨‍💻 All of my projects are available at [https://github.com/koushikrai/Portfolio_v1](https://github.com/koushikrai/Portfolio_v1)
+- 👨‍💻 All of my projects are available at [Portfolio](https://koushik-rai.netlify.app/)
 
 - 💬 Ask me about **my projects**
 
