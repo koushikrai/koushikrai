@@ -17,7 +17,7 @@
 
 - 📫 How to reach me **s.koushik.rai@gmail.com/https://instagram.com/Koushik_rai21**
 
-- 📄 Know about my experiences [https://drive.google.com/file/d/134LtI_MMEwrvs_15688dZT6fW01lx5v-/view?usp=sharing](https://drive.google.com/file/d/134LtI_MMEwrvs_15688dZT6fW01lx5v-/view?usp=sharing)
+- 📄 Know about my experiences [Resume](https://drive.google.com/file/d/134LtI_MMEwrvs_15688dZT6fW01lx5v-/view?usp=sharing)
 
 - ⚡ Fun fact **I look like i'm always mad which is true**
 
