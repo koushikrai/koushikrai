@@ -437,9 +437,9 @@ if __name__ == '__main__':
     OWNER_ID, acc_date = user_data
     formatter('account data', user_time)
 
-    # Calculate uptime based on GitHub account creation date (or adjust to birthdate if preferred)
-    created_datetime = datetime.datetime.strptime(acc_date, "%Y-%m-%dT%H:%M:%SZ")
-    age_data, age_time = perf_counter(daily_readme, created_datetime)
+    # Calculate uptime based on birthdate (19/02/2005)
+    birthdate = datetime.datetime(2005, 2, 19)
+    age_data, age_time = perf_counter(daily_readme, birthdate)
     formatter('uptime calculation', age_time)
 
     total_loc, loc_time = perf_counter(loc_query, ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'], 0)
