@@ -1,8 +1,8 @@
 <div align="center">
-  <!-- Dynamic Terminal Profile Card -->
+  <!-- Dynamic Terminal Profile Card (Consistent Dark Terminal Theme) -->
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/koushikrai/koushikrai/main/dark_mode.svg">
-    <img alt="Koushik Rai's GitHub Profile README" src="https://raw.githubusercontent.com/koushikrai/koushikrai/main/light_mode.svg">
+    <img alt="Koushik Rai's GitHub Profile README" src="https://raw.githubusercontent.com/koushikrai/koushikrai/main/dark_mode.svg">
   </picture>
 
   <br/><br/>

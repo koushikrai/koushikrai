@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 600" width="100%" height="auto">
 <style>
-.ascii {font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 7.2px; white-space: pre; fill: #1f2328;}
-.mainText {font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 16px; white-space: pre; fill: #24292f;}
-.key {fill: #953800;}
-.value {fill: #0a3069;}
-.addColor {fill: #1a7f37;}
-.delColor {fill: #cf222e;}
-.cc {fill: #c2cfde;}
+.ascii {font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 7.2px; white-space: pre; fill: #e2e2e2;}
+.mainText {font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 16px; white-space: pre; fill: #c9d1d9;}
+.key {fill: #ffa657;}
+.value {fill: #a5d6ff;}
+.addColor {fill: #3fb950;}
+.delColor {fill: #f85149;}
+.cc {fill: #616e7f;}
 </style>
-<rect width="1150px" height="600px" fill="#f6f8fa" rx="15"/>
+<rect width="1150px" height="600px" fill="#161b22" rx="15"/>
 <text x="20" y="25" class="ascii">
 <tspan x="20" y="25.0">. ...............................'''.'......'.........'''''''''''''..'..............................</tspan>
 <tspan x="20" y="32.1">................................''''''''''.'........'..''.'''''''''..........'......................</tspan>
