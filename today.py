@@ -35,14 +35,27 @@ def format_plural(unit):
     return 's' if unit != 1 else ''
 
 
-def simple_request(func_name, query, variables):
+def simple_request(func_name, query, variables, max_retries=4):
     """
-    Returns a request, or raises an Exception if the response does not succeed.
+    Returns a request with automatic retries on temporary 502/503/504 errors
     """
-    request = requests.post('https://api.github.com/graphql', json={'query': query, 'variables': variables}, headers=HEADERS)
-    if request.status_code == 200:
-        return request
-    raise Exception(func_name, ' has failed with status', request.status_code, request.text, QUERY_COUNT)
+    for attempt in range(max_retries):
+        try:
+            request = requests.post('https://api.github.com/graphql', json={'query': query, 'variables': variables}, headers=HEADERS)
+            if request.status_code == 200:
+                return request
+            elif request.status_code in [502, 503, 504, 403] and attempt < max_retries - 1:
+                wait_time = (2 ** attempt) + 1
+                print(f"[{func_name}] Received {request.status_code}. Retrying in {wait_time}s... (attempt {attempt + 1}/{max_retries})")
+                time.sleep(wait_time)
+                continue
+            else:
+                raise Exception(func_name, ' has failed with status', request.status_code, request.text, QUERY_COUNT)
+        except requests.exceptions.RequestException as e:
+            if attempt < max_retries - 1:
+                time.sleep(2 ** attempt)
+                continue
+            raise e
 
 
 def graph_commits(start_date, end_date):
@@ -101,9 +114,9 @@ def graph_repos_stars(count_type, owner_affiliation, cursor=None):
             return stars_counter(request.json()['data']['user']['repositories']['edges'])
 
 
-def recursive_loc(owner, repo_name, data, cache_comment, addition_total=0, deletion_total=0, my_commits=0, cursor=None):
+def recursive_loc(owner, repo_name, data, cache_comment, addition_total=0, deletion_total=0, my_commits=0, cursor=None, max_retries=4):
     """
-    Uses GitHub's GraphQL v4 API and cursor pagination to fetch 100 commits from a repository at a time
+    Uses GitHub's GraphQL v4 API and cursor pagination with retry handling
     """
     query_count('recursive_loc')
     query = '''
@@ -139,16 +152,26 @@ def recursive_loc(owner, repo_name, data, cache_comment, addition_total=0, delet
         }
     }'''
     variables = {'repo_name': repo_name, 'owner': owner, 'cursor': cursor}
-    request = requests.post('https://api.github.com/graphql', json={'query': query, 'variables': variables}, headers=HEADERS)
-    if request.status_code == 200:
-        if request.json()['data']['repository']['defaultBranchRef'] is not None:
-            return loc_counter_one_repo(owner, repo_name, data, cache_comment, request.json()['data']['repository']['defaultBranchRef']['target']['history'], addition_total, deletion_total, my_commits)
-        else:
+    
+    for attempt in range(max_retries):
+        time.sleep(0.08)  # Rate limiting spacing
+        request = requests.post('https://api.github.com/graphql', json={'query': query, 'variables': variables}, headers=HEADERS)
+        if request.status_code == 200:
+            resp_json = request.json()
+            if 'data' in resp_json and resp_json['data'] and resp_json['data'].get('repository'):
+                repo_obj = resp_json['data']['repository']
+                if repo_obj.get('defaultBranchRef') is not None:
+                    return loc_counter_one_repo(owner, repo_name, data, cache_comment, repo_obj['defaultBranchRef']['target']['history'], addition_total, deletion_total, my_commits)
             return 0, 0, 0
-    force_close_file(data, cache_comment)
-    if request.status_code == 403:
-        raise Exception("Too many requests in a short amount of time! You've hit GitHub's anti-abuse limit.")
-    raise Exception('recursive_loc() has failed with status', request.status_code, request.text, QUERY_COUNT)
+        elif request.status_code in [502, 503, 504, 403] and attempt < max_retries - 1:
+            wait_time = (2 ** attempt) + 1
+            print(f"[recursive_loc: {owner}/{repo_name}] Received {request.status_code}. Retrying in {wait_time}s... (attempt {attempt + 1}/{max_retries})")
+            time.sleep(wait_time)
+            continue
+        else:
+            print(f"[recursive_loc: {owner}/{repo_name}] Warning: Failed with status {request.status_code}. Saving partial data.")
+            force_close_file(data, cache_comment)
+            return addition_total, deletion_total, my_commits
 
 
 def loc_counter_one_repo(owner, repo_name, data, cache_comment, history, addition_total, deletion_total, my_commits):
