@@ -34,6 +34,12 @@
 
   <br/><br/>
 
+  <!-- GitHub Trophies -->
+  <h2>🏆 GitHub Achievements</h2>
+  <img src="https://github-profile-trophy-nu.vercel.app/?username=koushikrai&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4" alt="GitHub Trophies" />
+
+  <br/><br/>
+
   <!-- GitHub Streak Stats -->
   <h2>🔥 GitHub Streak Stats</h2>
   <img src="https://streak-stats.demolab.com?user=koushikrai&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
