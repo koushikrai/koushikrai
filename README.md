@@ -34,21 +34,11 @@
 
   <br/><br/>
 
-  <!-- GitHub Trophies -->
-  <h2>🏆 GitHub Achievements</h2>
-  <img src="https://github-profile-trophy.vercel.app/?username=koushikrai&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4" alt="GitHub Trophies" />
+  <!-- GitHub Streak Stats -->
+  <h2>🔥 GitHub Streak Stats</h2>
+  <img src="https://streak-stats.demolab.com?user=koushikrai&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
 
   <br/><br/>
-
-  <!-- GitHub Streak & Language Stats -->
-  <h2>📊 GitHub Statistics</h2>
-  <p align="center">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=koushikrai&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
-    &nbsp;
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=koushikrai&theme=tokyonight&hide_border=true&layout=compact" alt="Top Languages" />
-  </p>
-
-  <br/>
 
   <!-- Contribution Graph Snake Game -->
   <h2>🐍 Contribution Activity</h2>
@@ -57,13 +47,4 @@
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/koushikrai/koushikrai/output/github-contribution-grid-snake.svg">
     <img alt="Contribution Snake" src="https://raw.githubusercontent.com/koushikrai/koushikrai/output/github-contribution-grid-snake.svg" width="100%">
   </picture>
-
-  <br/><br/>
-
-  <!-- Spotify Live Status -->
-  <h2>🎵 Currently Jamming To</h2>
-  <a href="https://open.spotify.com" target="_blank">
-    <img src="https://spotify-recently-played-readme.vercel.app/api?user=koushikrai&count=1&theme=tokyonight" alt="Spotify Recently Played" />
-  </a>
-
 </div>
