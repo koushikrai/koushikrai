@@ -91,7 +91,7 @@
 <text x="540" y="30" class="mainText">
 <tspan x="540" y="30">koushik@rai</tspan> -———————————————————————————————————————————-—-
 <tspan x="540" y="50" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> ......................... </tspan><tspan class="value">Windows 11, Android 14</tspan>
-<tspan x="540" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc" id="age_data_dots"> </tspan><tspan class="value" id="age_data">21 years, 6 months, 14 days</tspan>
+<tspan x="540" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc" id="age_data_dots"> </tspan><tspan class="value" id="age_data">21 years, 6 months, 15 days</tspan>
 <tspan x="540" y="90" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value">Volvitech Software Solutions, Freelancer</tspan>
 <tspan x="540" y="110" class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> ....... </tspan><tspan class="value">Full Stack Developer, AI Engineer</tspan>
 <tspan x="540" y="130" class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> ......................... </tspan><tspan class="value">VS Code, Antigravity</tspan>
